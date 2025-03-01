@@ -246,3 +246,4 @@ impl<'a> UDbgTracer<'a> {
         udbg_ui().info(format!("[trace end] elapsed: {}ms", dur));
     }
 }
+
