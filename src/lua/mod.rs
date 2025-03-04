@@ -1738,3 +1738,4 @@ fn init_regid_aarch64(s: &LuaState) -> LuaResult<LuaTable> {
 
     Ok(t)
 }
+
