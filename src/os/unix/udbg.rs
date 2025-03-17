@@ -51,3 +51,4 @@ pub trait EventHandler {
     /// continue debug event
     fn cont(&mut self, _: HandleResult, buf: &mut TraceBuf);
 }
+
