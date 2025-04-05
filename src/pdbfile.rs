@@ -434,3 +434,4 @@ impl SymbolsData {
         pdb.global()
     }
 }
+
