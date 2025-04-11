@@ -77,3 +77,4 @@ impl StringUtil for str {
         self.to_unicode().to_ansi(codepage)
     }
 }
+
