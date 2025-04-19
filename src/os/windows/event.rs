@@ -48,3 +48,4 @@ impl EventHandle {
         unsafe { ResetEvent(*self.0) }
     }
 }
+
