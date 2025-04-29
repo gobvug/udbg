@@ -141,3 +141,4 @@ pub struct vnode_fdinfowithpath {
     pub pfi: proc_fileinfo,
     pub pvip: vnode_info_path,
 }
+
