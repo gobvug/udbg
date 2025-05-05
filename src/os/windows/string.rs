@@ -222,3 +222,4 @@ impl From<Vec<u16>> for UnicodeString {
         Self(us, v)
     }
 }
+
