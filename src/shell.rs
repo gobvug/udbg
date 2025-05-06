@@ -184,3 +184,4 @@ pub fn udbg_ui() -> &'static dyn UDbgShell {
 pub struct SimpleUDbgShell(ShellData);
 
 impl UDbgShell for SimpleUDbgShell {}
+
