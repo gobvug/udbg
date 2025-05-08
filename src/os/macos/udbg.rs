@@ -651,3 +651,4 @@ fn parse_partial_macho(bytes: &[u8]) -> goblin::error::Result<(header::Header, S
     }
     Ok((header, segments))
 }
+
