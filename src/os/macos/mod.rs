@@ -214,3 +214,4 @@ impl<T> FFIArray<T, usize> {
         unsafe { core::slice::from_raw_parts(self.ptr, self.cnt as _) }
     }
 }
+
