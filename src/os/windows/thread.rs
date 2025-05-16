@@ -619,3 +619,4 @@ impl From<&CREATE_PROCESS_DEBUG_INFO> for DbgThread {
         })
     }
 }
+
