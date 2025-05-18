@@ -48,3 +48,4 @@ pub trait RangeValue<T: Copy + PartialOrd<T> = usize>: Sized {
         slice.get_mut(i)
     }
 }
+
