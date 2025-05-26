@@ -606,3 +606,4 @@ pub fn get_pbi() -> WindowsResult<PROCESS_BASIC_INFORMATION> {
 pub fn get_peb() -> WindowsResult<*mut PEB> {
     Ok(get_pbi()?.PebBaseAddress)
 }
+
