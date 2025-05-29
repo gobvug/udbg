@@ -346,3 +346,4 @@ pub fn map_or_open(file: HANDLE, path: &str) -> anyhow::Result<memmap2::Mmap> {
         }
     }
 }
+
