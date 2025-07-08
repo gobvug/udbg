@@ -18,3 +18,4 @@ fn memory() {
 
     assert!(ps.read_value::<IMAGE_DOS_HEADER>(m.base() + 8).is_none());
 }
+
