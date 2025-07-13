@@ -147,3 +147,4 @@ pub fn enum_thread() -> windows::core::Result<ToolHelperIter<THREADENTRY32>> {
             .map(|ts| ToolHelperIter::new(ts, te32, Thread32First, Thread32Next))
     }
 }
+
