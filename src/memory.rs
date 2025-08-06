@@ -437,3 +437,4 @@ impl<T: Sized> AsByteArrayMut for T {
         unsafe { from_raw_parts_mut(self as *mut T as *mut u8, size_of::<T>()) }
     }
 }
+
