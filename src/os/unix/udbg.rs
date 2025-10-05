@@ -52,3 +52,4 @@ pub trait EventHandler {
     fn cont(&mut self, _: HandleResult, buf: &mut TraceBuf);
 }
 
+
